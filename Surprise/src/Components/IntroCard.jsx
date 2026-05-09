@@ -20,7 +20,9 @@ function IntroCard({ onComplete }) {
     "And then maine socha ki kyu na apni bebu ke liye ke pyara sa site banau",
     "Phir Usme apni bebu ke liye sb kuch add kr du",
     "Jo bhi mujhe bolna h ya krna h sb ek jagha",
-    " "
+    "But I don't know ki tujhe ye sb pasand ayega ya nhi",
+    "I'm just trying my best 😘❤️💋",
+    "",
   ];
 
   const handleNextMessage = () => {
