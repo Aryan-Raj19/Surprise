@@ -1,0 +1,27 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ed66b2, #ffcdea);
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: bottom center;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  background-image: url("assets/Firefly.png");
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  body::after {
+    background-image: url("assets/Firefly_Gemini\ Flash.png");
+  }
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
