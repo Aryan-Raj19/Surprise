@@ -52,19 +52,26 @@ const Poems = ({ onComplete }) => {
     I just want to cuddle you whenever I'm alone,
     To soothe my fear and calm the unknown.`,
 
-    `I really tried my best.
-    Best to let things slip away.
-    Away from my hands and imagination.
-    Imagination of you and me, forever.
-    Forever, the dream I chase.
-    Chase of you and me, together.
-    Together, to create memories.
-    Memories to cherish in the future.
-    Future, now a fading dream.
-    Dream impossible to make "we."
-    We are just you and I.
-    I know my eyes are not hazel but.
-    But all they want is you, HAZEL.`,
+    `How can a single glimpse of her happiness
+     Extract every bit of my sadness?
+
+    How can a touch of her beauty
+    Make me lose myself completely?
+
+    How can tears running down her eyes
+    Shatter my heart and make me cry?
+
+    How can her flared nose filled with rage
+    Give me pleasure and brighten my days?
+
+    How can a softly gasped-out moan
+    Shake my world and split me to the bone?
+
+    How can a single thought of her
+    Set every restless thing in me to blur?
+
+    How can she or her virtual presence
+    Bring my lifeless world back to existence?`,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -146,7 +153,7 @@ const Poems = ({ onComplete }) => {
           >
             ❯
           </button>
-          
+
           {/* Next Tab Button */}
           {currentIndex === poems_texts.length - 1 && (
             <button
