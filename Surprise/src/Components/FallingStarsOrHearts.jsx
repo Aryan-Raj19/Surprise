@@ -36,10 +36,10 @@ const FallingStarsOrHearts = ({ showHearts }) => {
             left: `${item.left}%`,
             fontSize: `${item.size}px`,
             zIndex: 10,
-            color: showHearts ? "#e91e63" : "#ffeb3b", // ❤️ for hearts, ⭐ for stars
+            color: showHearts ? "#e91e63" : "#ffeb3b", // ❤️ for hearts, 💋 for kisses
           }}
         >
-          {showHearts ? "❤️" : "⭐"}
+          {showHearts ? "❤️" : "💋"}
         </motion.div>
       ))}
     </>

@@ -82,7 +82,7 @@ function Outro({ onComplete }) {
               onClick={() => setShowHearts(!showHearts)}
               className="backdrop-blur-none text-[#b11a70] px-4 mx-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-lg hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_12px_#b11a70] pulse"
             >
-              {showHearts ? "Switch to Stars" : "Switch to Hearts"}
+              {showHearts ? "Switch to Kisses" : "Switch to Hearts"}
             </button>
           </div>
         </div>
