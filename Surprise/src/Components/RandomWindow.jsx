@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 
 const RandomWindow = ({ onComplete }) => {
   const [chats, setChats] = useState(
-    `So from interesting, I meant just to move this window around.`
+    `Isko thora udate h`
   );
 
   const messages = [
-    `So from interesting, I meant just to move this window around.`,  
-    `But hey, even this wasn't that easy.`,  
-    `I had to write a bunch of code to make this work.`,  
-    `But I'm happy that it worked.`,  
+    `Isko thora udate h`,  
+    `Are ye to already udane lga`,  
+    `Idher baby, idher hu main, idher click kr`,  
+    `You might be thinking ki ye kya hai`,
+    `Bus chat window ko ider udher kr rha h`,
+    `But baby ye easy nhi tha, bahut dimag lagana pda`, 
+    `Or dheer sara code likhna pda iske liye`, 
+    `But I'm happy ki mehnat kaam kr gyi and it's working!`, 
     `And I hope you liked it.`,  
     `Oh, and… I've written some poems for you.`,  
     `A little sensual, a little romantic… and very special.`,  

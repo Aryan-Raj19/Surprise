@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "../Style/SurpriseMessage.css";
 
 const messages = [
-  "You make my heart race every time I see you.",
+  "You make my heart race every time I think about you.",
   "I wish I could hold you forever.",
   "Every moment with you feels like magic.",
   "You're the reason behind my smile.",

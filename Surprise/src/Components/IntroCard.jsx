@@ -10,6 +10,7 @@ function IntroCard({ onComplete }) {
 
   const messages = [
     "Aww... Meri motu... meri cutu baby",
+    "My Love",
     "Meri Malkin",
     "Meri Ragini",
     "Meri Sona",
@@ -22,7 +23,9 @@ function IntroCard({ onComplete }) {
     "Jo bhi mujhe bolna h ya krna h sb ek jagha",
     "But I don't know ki tujhe ye sb pasand ayega ya nhi",
     "I'm just trying my best 😘❤️💋",
-    "",
+    "I mean kuch nhi to ek or nakam koshish",
+    "Okay let's take an easy start",
+    "Ye boring sa next next pe click krna band krte h"
   ];
 
   const handleNextMessage = () => {
