@@ -82,7 +82,7 @@ const RandomWindow = ({ onComplete }) => {
         </p>
         <button
           onClick={handleNext}
-          className="mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-md hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer"
+          className="mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-md hover:backdrop-blur-xs hover:scale-105 shadow-[0_0_12px_#b11a70] transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer"
         >
           Next
         </button>

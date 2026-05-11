@@ -18,24 +18,3 @@
   .animate-birthdayText {
     animation: birthdayText 3s ease forwards;
   }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(225, 61, 154, 0.6);
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(225, 61, 154, 0.9);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(225, 61, 154, 0.6);
-    }
-  }
-  
-  .pulse {
-    animation: pulse 1.5s infinite;
-  }
-  
-  

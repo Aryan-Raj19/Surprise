@@ -142,14 +142,14 @@ const Poems = ({ onComplete }) => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-4xl hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer"
+            className="absolute left-2 top-1/2 -translate-y-1/2 mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-4xl hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer shadow-[0_0_12px_#b11a70]"
           >
             ❮
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-4xl hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer"
+            className="absolute right-2 top-1/2 -translate-y-1/2 mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-4xl hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer shadow-[0_0_12px_#b11a70]"
           >
             ❯
           </button>
@@ -158,7 +158,7 @@ const Poems = ({ onComplete }) => {
           {currentIndex === poems_texts.length - 1 && (
             <button
               onClick={handleNextMessage}
-              className="mb-5 backdrop-blur-none text-[#b11a70] px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-lg hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_12px_#b11a70] pulse"
+              className="mb-5 backdrop-blur-none text-[#b11a70] px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg hover:backdrop-blur-xs transition duration-300 cursor-pointer shadow-[0_0_12px_#b11a70] hover:shadow-[0_0_14px_#b11a70] pulse"
             >
               Next Tab
             </button>

@@ -73,14 +73,14 @@ function Outro({ onComplete }) {
           <div className="flex justify-center gap-4 mt-4">
             <button
               onClick={handleNextMessage}
-              className="backdrop-blur-none text-[#b11a70] px-4 mx-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-lg hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_12px_#b11a70] pulse"
+              className="backdrop-blur-none text-[#b11a70] px-4 mx-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-[0_0_12px_#b11a70] hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_14px_#b11a70] pulse"
             >
               Next Message
             </button>
 
             <button
               onClick={() => setShowHearts(!showHearts)}
-              className="backdrop-blur-none text-[#b11a70] px-4 mx-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-lg hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_12px_#b11a70] pulse"
+              className="backdrop-blur-none text-[#b11a70] px-4 mx-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-base md:text-lg shadow-[0_0_12px_#b11a70] hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_14px_#b11a70] pulse"
             >
               {showHearts ? "Switch to Kisses" : "Switch to Hearts"}
             </button>
