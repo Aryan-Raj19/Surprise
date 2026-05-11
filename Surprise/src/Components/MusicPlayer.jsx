@@ -12,6 +12,7 @@ const playlist = [
   { title: "Saiyaan", artist: "Kailash Kher", src: "/src/assets/songs/Saiyaan.mpeg" },
   { title: "Sanu Pyar Wali", artist: "Noor Jehan", src: "/src/assets/songs/Sanupyarwali.mpeg" },
   { title: "Voh Dekhne Me", artist: "Ali Zafar", src: "/src/assets/songs/W0dekhneme.mpeg" },
+  { title: "Tere Naina", artist: "Shafqat Amanat Ali", src: "/src/assets/songs/Terenaina.mpeg" },
   // Add more songs here
 ];
 
