@@ -2,18 +2,59 @@ import { useState, useEffect, useRef } from "react";
 import { Howl } from "howler";
 import { motion, AnimatePresence } from "framer-motion";
 
+const CLOUD = "https://res.cloudinary.com/dr2yealia/video/upload";
+
 const playlist = [
-  { title: "Desi Girl", artist: "Sunidhi Chauhan, Shekhar, Shankar, Vishal", src: "/src/assets/songs/Desigirl.mpeg" },
-  { title: "Finding Her", artist: "Kushagra, Bharat Srinivasan, Saaheal", src: "/src/assets/songs/Findingher.mpeg" },
-  { title: "Kl Chaudhavi Ka Chand", artist: "Jagjit Singh", src: "/src/assets/songs/Klchaudavikachand.mpeg" },
-  { title: "O Re Piya", artist: "Rahat Fateh Ali Khan", src: "/src/assets/songs/Orepiya.mpeg" },
-  { title: "Preety Woman", artist: "Ravi Khote, Shankar", src: "/src/assets/songs/PreetyWoman.mpeg" },
-  { title: "Sahiba", artist: "Jasleen, Stebin Ben, Priya Saraiya, Aditya Sharma", src: "/src/assets/songs/sahiba.mpeg" },
-  { title: "Saiyaan", artist: "Kailash Kher", src: "/src/assets/songs/Saiyaan.mpeg" },
-  { title: "Sanu Pyar Wali", artist: "Noor Jehan", src: "/src/assets/songs/Sanupyarwali.mpeg" },
-  { title: "Voh Dekhne Me", artist: "Ali Zafar", src: "/src/assets/songs/W0dekhneme.mpeg" },
-  { title: "Tere Naina", artist: "Shafqat Amanat Ali", src: "/src/assets/songs/Terenaina.mpeg" },
-  // Add more songs here
+  {
+    title: "Desi Girl",
+    artist: "Sunidhi Chauhan, Shekhar, Shankar, Vishal",
+    src: `${CLOUD}/v1778488490/Desigirl_ocjsa8.mp3`,
+  },
+  {
+    title: "Finding Her",
+    artist: "Kushagra, Bharat Srinivasan, Saaheal",
+    src: `${CLOUD}/v1778488515/Findingher_ewsnns.mp3`,
+  },
+  {
+    title: "Kl Chaudhavi Ka Chand",
+    artist: "Jagjit Singh",
+    src: `${CLOUD}/v1778488520/Klchaudavikachand_tqmpb4.mp3`,
+  },
+  {
+    title: "O Re Piya",
+    artist: "Rahat Fateh Ali Khan",
+    src: `${CLOUD}/v1778488484/Orepiya_jrixnv.mp3`,
+  },
+  {
+    title: "Preety Woman",
+    artist: "Ravi Khote, Shankar",
+    src: `${CLOUD}/v1778488484/PreetyWoman_ueinmw.mp3`,
+  },
+  {
+    title: "Sahiba",
+    artist: "Jasleen, Stebin Ben, Priya Saraiya, Aditya Sharma",
+    src: `${CLOUD}/v1778488485/sahiba_a3fioh.mp3`,
+  },
+  {
+    title: "Saiyaan",
+    artist: "Kailash Kher",
+    src: `${CLOUD}/v1778488494/Saiyaan_qibf5b.mp3`,
+  },
+  {
+    title: "Sanu Pyar Wali",
+    artist: "Noor Jehan",
+    src: `${CLOUD}/v1778488512/Sanupyarwali_rnmtf7.mp3`,
+  },
+  {
+    title: "Voh Dekhne Me",
+    artist: "Ali Zafar",
+    src: `${CLOUD}/v1778488483/W0dekhneme_xp3tpf.mp3`,
+  },
+  {
+    title: "Tere Naina",
+    artist: "Shafqat Amanat Ali",
+    src: `${CLOUD}/v1778488515/Terenaina_tueceq.mp3`,
+  },
 ];
 
 const MusicPlayer = () => {
@@ -131,7 +172,6 @@ const MusicPlayer = () => {
 
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-10 min-h-screen">
-
       {/* Page heading */}
       <p
         className="text-[#b11a70] text-2xl md:text-3xl font-bold text-center"
@@ -142,7 +182,6 @@ const MusicPlayer = () => {
 
       {/* ── Player Card ── */}
       <div className="w-full max-w-sm flex flex-col items-center gap-5 px-6 py-8 rounded-3xl border border-[#b11a70]/20 shadow-[0_0_24px_rgba(177,26,112,0.15)] backdrop-blur-md">
-
         {/* Album art */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -289,7 +328,9 @@ const MusicPlayer = () => {
               <div className="flex-1 min-w-0">
                 <p
                   className={`text-sm font-semibold truncate ${
-                    index === currentIndex ? "text-[#b11a70]" : "text-[#b11a70]/75"
+                    index === currentIndex
+                      ? "text-[#b11a70]"
+                      : "text-[#b11a70]/75"
                   }`}
                   style={{ fontFamily: "Dosis, sans-serif" }}
                 >
