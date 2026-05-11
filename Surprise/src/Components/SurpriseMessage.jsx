@@ -39,7 +39,7 @@ const SurpriseMessage = ({ onComplete }) => {
   };
 
   return (
-    <div className="relative w-[88vw] h-[105vh] rounded-xl overflow-hidden">
+    <div className="relative w-[88vw] h-[99vh] rounded-xl overflow-hidden">
       {displayedMessages.map((msg, index) => (
         <motion.div
           key={index}
@@ -106,7 +106,7 @@ const SurpriseMessage = ({ onComplete }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bottom-10 flex flex-col h-full justify-center gap-5 z-50"
+          className="flex flex-col h-full justify-end items-center gap-5 z-50"
         >
           <p
             className="text-[#b11a70] text-lg md:text-2xl font-bold text-center drop-shadow-md"
