@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "../Style/SurpriseMessage.css";
 
@@ -11,7 +11,6 @@ const messages = [
   "You make my world feel complete.",
 ];
 
-// Positions adjusted to viewport size for better responsiveness
 const fixedPositions = [
   { x: "53vw", y: "5vh" },
   { x: "14vw", y: "45vh" },
@@ -21,9 +20,10 @@ const fixedPositions = [
   { x: "30vw", y: "25vh" },
 ];
 
-const SurpriseMessage = () => {
+const SurpriseMessage = ({ onComplete }) => {
   const [displayedMessages, setDisplayedMessages] = useState([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const allShown = currentMessageIndex >= messages.length;
 
   const handleNextMessage = () => {
     if (currentMessageIndex < messages.length) {
@@ -39,8 +39,7 @@ const SurpriseMessage = () => {
   };
 
   return (
-    <div className="relative w-[88vw] h-[88vh] rounded-xl overflow-hidden">
-      {/* Display all previous messages */}
+    <div className="relative w-[88vw] h-[105vh] rounded-xl overflow-hidden">
       {displayedMessages.map((msg, index) => (
         <motion.div
           key={index}
@@ -64,8 +63,7 @@ const SurpriseMessage = () => {
         </motion.div>
       ))}
 
-      {/* Current message window */}
-      {currentMessageIndex < messages.length && (
+      {!allShown && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{
@@ -98,6 +96,33 @@ const SurpriseMessage = () => {
             }}
           >
             Next Message
+          </motion.button>
+        </motion.div>
+      )}
+
+      {/* Continue section — anchored to bottom, well below all scattered messages */}
+      {allShown && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bottom-10 flex flex-col h-full justify-center gap-5 z-50"
+        >
+          <p
+            className="text-[#b11a70] text-lg md:text-2xl font-bold text-center drop-shadow-md"
+            style={{ fontFamily: "Dancing Script, cursive" }}
+          >
+            And there's one more thing for you... 🎵
+          </p>
+          <motion.button
+            onClick={onComplete}
+            initial={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="backdrop-blur-none text-[#b11a70] px-6 py-3 rounded-lg font-bold text-lg shadow-[0_0_12px_#b11a70] hover:backdrop-blur-xs transition duration-300 cursor-pointer hover:shadow-[0_0_15px_#b11a70] pulse"
+            style={{ fontFamily: "Dosis, sans-serif" }}
+          >
+            Some Of Your Favorite Songs 🎵
           </motion.button>
         </motion.div>
       )}

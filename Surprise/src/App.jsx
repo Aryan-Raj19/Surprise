@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Suspense, lazy } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // AnimatePresence added
+import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 import "./App.css";
 
@@ -9,6 +9,7 @@ const Outro = lazy(() => import("./Components/Outro"));
 const StartScreen = lazy(() => import("./Components/StartScreen"));
 const RandomWindow = lazy(() => import("./Components/RandomWindow"));
 const SurpriseMessage = lazy(() => import("./Components/SurpriseMessage"));
+const MusicPlayer = lazy(() => import("./Components/MusicPlayer"));
 
 function App() {
   const [phase, setPhase] = useState("start");
@@ -30,7 +31,10 @@ function App() {
     const diff = targetVolume - bgMusic.current.volume;
     let step = 0;
     const interval = setInterval(() => {
-      if (!bgMusic.current) { clearInterval(interval); return; }
+      if (!bgMusic.current) {
+        clearInterval(interval);
+        return;
+      }
       step++;
       bgMusic.current.volume += diff / steps;
       if (step >= steps) clearInterval(interval);
@@ -56,10 +60,21 @@ function App() {
     setIsMuted(!isMuted);
   };
 
+  // Fade out bg music when entering music player phase
+  const handleOutroComplete = () => {
+    fadeVolume(0, 1500);
+    setTimeout(() => {
+      bgMusic.current?.pause();
+      setPhase("messages");
+    }, 1500);
+  };
+
+  // When entering music phase, bg music is already faded/paused
+  const handleMessagesComplete = () => setPhase("music");
+
   const handleIntroComplete = () => setPhase("random");
   const handleRandomWindowComplete = () => setPhase("poems");
   const handlePoemComplete = () => setPhase("outro");
-  const handleOutroComplete = () => setPhase("messages");
 
   return (
     <>
@@ -72,7 +87,6 @@ function App() {
         </button>
       )}
 
-      {/* AnimatePresence needed here for exit animations to actually fire */}
       <Suspense>
         <AnimatePresence mode="wait">
           {phase === "start" && (
@@ -143,7 +157,20 @@ function App() {
               exit={{ scale: 0.5 }}
               transition={{ duration: 0.5 }}
             >
-              <SurpriseMessage />
+              {/* Pass onComplete to SurpriseMessage to trigger music phase */}
+              <SurpriseMessage onComplete={handleMessagesComplete} />
+            </motion.div>
+          )}
+
+          {phase === "music" && (
+            <motion.div
+              key="music"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.6 }}
+            >
+              <MusicPlayer />
             </motion.div>
           )}
         </AnimatePresence>
