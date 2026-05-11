@@ -36,8 +36,12 @@ function App() {
         return;
       }
       step++;
-      bgMusic.current.volume += diff / steps;
-      if (step >= steps) clearInterval(interval);
+      const newVolume = bgMusic.current.volume + diff / steps;
+      bgMusic.current.volume = Math.min(1, Math.max(0, newVolume));
+      if (step >= steps) {
+        bgMusic.current.volume = targetVolume;
+        clearInterval(interval);
+      }
     }, stepTime);
   };
 

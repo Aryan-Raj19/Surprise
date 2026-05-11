@@ -3,9 +3,15 @@ import { Howl } from "howler";
 import { motion, AnimatePresence } from "framer-motion";
 
 const playlist = [
-  { title: "Song Name 1", artist: "Artist 1", src: "/songs/song1.mp3" },
-  { title: "Song Name 2", artist: "Artist 2", src: "/songs/song2.mp3" },
-  { title: "Song Name 3", artist: "Artist 3", src: "/songs/song3.mp3" },
+  { title: "Desi Girl", artist: "Sunidhi Chauhan, Shekhar, Shankar, Vishal", src: "/src/assets/songs/Desigirl.mpeg" },
+  { title: "Finding Her", artist: "Kushagra, Bharat Srinivasan, Saaheal", src: "/src/assets/songs/Findingher.mpeg" },
+  { title: "Kl Chaudhavi Ka Chand", artist: "Jagjit Singh", src: "/src/assets/songs/Klchaudavikachand.mpeg" },
+  { title: "O Re Piya", artist: "Rahat Fateh Ali Khan", src: "/src/assets/songs/Orepiya.mpeg" },
+  { title: "Preety Woman", artist: "Ravi Khote, Shankar", src: "/src/assets/songs/PreetyWoman.mpeg" },
+  { title: "Sahiba", artist: "Jasleen, Stebin Ben, Priya Saraiya, Aditya Sharma", src: "/src/assets/songs/sahiba.mpeg" },
+  { title: "Saiyaan", artist: "Kailash Kher", src: "/src/assets/songs/Saiyaan.mpeg" },
+  { title: "Sanu Pyar Wali", artist: "Noor Jehan", src: "/src/assets/songs/Sanupyarwali.mpeg" },
+  { title: "Voh Dekhne Me", artist: "Ali Zafar", src: "/src/assets/songs/W0dekhneme.mpeg" },
   // Add more songs here
 ];
 
