@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FallingStarsOrHearts from "./FallingStarsOrHearts";
+import FallingKissesOrHearts from "./FallingKissesOrHearts";
 
 function Outro({ onComplete }) {
   const [chats, setChats] = useState(`I don't know if I'm a good poet or not.`);
@@ -52,7 +52,7 @@ function Outro({ onComplete }) {
 
   return (
     <>
-      <FallingStarsOrHearts showHearts={showHearts} />
+      <FallingKissesOrHearts showHearts={showHearts} />
 
       <div className="relative flex justify-center items-center h-170 overflow-hidden">
         <div className="container backdrop-blur-xs py-12 px-4 m-4 max-w-2xl mx-auto rounded-2xl">

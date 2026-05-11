@@ -1,36 +1,36 @@
 import { useState, useEffect } from "react";
 
 const RandomWindow = ({ onComplete }) => {
-  const [chats, setChats] = useState(
-    `Isko thora udate h`
-  );
+  const [chats, setChats] = useState("Isko thora udate h");
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const [maxWidth, setMaxWidth] = useState("450px"); // moved out of inline style
 
   const messages = [
-    `Isko thora udate h`,  
-    `Are ye to already udane lga`,  
-    `Idher baby, idher hu main, idher click kr`,  
+    `Isko thora udate h`,
+    `Are ye to already udane lga`,
+    `Idher baby, idher hu main, idher click kr`,
     `You might be thinking ki ye kya hai`,
     `Bus chat window ko ider udher kr rha h`,
-    `But baby ye easy nhi tha, bahut dimag lagana pda`, 
-    `Or dheer sara code likhna pda iske liye`, 
-    `But I'm happy ki mehnat kaam kr gyi and it's working!`, 
-    `And I hope you liked it.`,  
-    `Oh, and… I've written some poems for you.`,  
-    `A little sensual, a little romantic… and very special.`,  
-    `I hope they make you smile.`  
+    `But baby ye easy nhi tha, bahut dimag lagana pda`,
+    `Or dheer sara code likhna pda iske liye`,
+    `But I'm happy ki mehnat kaam kr gyi and it's working!`,
+    `And I hope you liked it.`,
+    `Oh, and… I've written some poems for you.`,
+    `A little sensual, a little romantic… and very special.`,
+    `I hope they make you smile.`,
   ];
 
-  const [position, setPosition] = useState({ top: 0, left: 0 });
-
-  // Function to handle random window positioning within screen bounds
   const setRandomPosition = () => {
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
+    const isMobile = windowWidth <= 640;
 
-    const maxTop = Math.max(windowHeight * 0.65 - 180, 0); // Reduced height for better mobile fitting
-    const maxLeft = windowWidth <= 640 
-      ? Math.max(windowWidth * 0.85 - 200, 0) // Smaller width for mobile screens
-      : Math.max(windowWidth * 0.85 - 450, 0); // Regular width for larger screens
+    setMaxWidth(isMobile ? "200px" : "450px"); // update reactively
+
+    const maxTop = Math.max(windowHeight * 0.65 - 180, 0);
+    const maxLeft = isMobile
+      ? Math.max(windowWidth * 0.85 - 200, 0)
+      : Math.max(windowWidth * 0.85 - 450, 0);
 
     setPosition({
       top: Math.random() * maxTop,
@@ -39,19 +39,18 @@ const RandomWindow = ({ onComplete }) => {
   };
 
   useEffect(() => {
-    setRandomPosition(); // Initial positioning when the component loads
-    window.addEventListener("resize", setRandomPosition); // Adjust positioning on window resize
+    setRandomPosition();
+    window.addEventListener("resize", setRandomPosition);
     return () => window.removeEventListener("resize", setRandomPosition);
   }, []);
 
   const handleNext = () => {
     const nextIndex = (messages.indexOf(chats) + 1) % messages.length;
-
     if (nextIndex === 0) {
       onComplete();
     } else {
       setChats(messages[nextIndex]);
-      setRandomPosition(); // Set new random position after each message
+      setRandomPosition();
     }
   };
 
@@ -63,10 +62,10 @@ const RandomWindow = ({ onComplete }) => {
           top: `${position.top}px`,
           left: `${position.left}px`,
           position: "absolute",
-          width: "90%", // Responsive width
-          maxWidth: window.innerWidth <= 640 ? "200px" : "450px", // Smaller window for mobile
+          width: "90%",
+          maxWidth, // clean — no window access at render time
           height: "auto",
-          minHeight: "150px", // Minimum height to maintain content structure
+          minHeight: "150px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -81,7 +80,6 @@ const RandomWindow = ({ onComplete }) => {
         >
           {chats}
         </p>
-
         <button
           onClick={handleNext}
           className="mt-4 mx-auto px-5 py-2 backdrop-blur-none text-[#b11a70] rounded-md hover:backdrop-blur-xs hover:scale-105 transition duration-300 font-medium text-sm sm:text-base md:text-lg pulse cursor-pointer"
